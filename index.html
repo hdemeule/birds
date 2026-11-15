@@ -616,10 +616,13 @@ blockquote{font:17px/1.55 var(--body);font-style:normal}
 .opt.good.missed::after{content:" ✓ oublié"}
 #valid{margin-top:14px}
 @media (min-width:960px){.track{max-width:420px}}
+
+/* Logo : nom puis icône, collés */
+.wm{gap:0!important;align-items:center}.wm-ico{display:inline-block;width:.86em;height:.86em;flex:none;margin:0;vertical-align:-.12em}
 </style>
 </head>
 <body>
-<main id="app"><div class="center" aria-busy="true"><div><p class="wordmark" style="font-size:44px;margin:0 0 14px">Birds<em>.</em></p><div class="spinner" style="margin:0 auto"></div></div></div></main>
+<main id="app"><div class="center" aria-busy="true"><div><p class="wordmark wm" style="font-size:44px;margin:0 0 14px"><span class="wm-t">Birds<em>.</em></span><img class="wm-ico" src="/icon.svg" alt="" aria-hidden="true"></p><div class="spinner" style="margin:0 auto"></div></div></div></main>
 <script src="sosies.js"></script>
 <script src="app.js"></script>
 </body>

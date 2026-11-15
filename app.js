@@ -1104,7 +1104,7 @@ function migrateStars() {
   save();
 }
 
-const appTop = () => `<header class="pbar apptop"><span class="wordmark">Birds<em>.</em></span></header>`;
+const appTop = () => `<header class="pbar apptop"><span class="wordmark wm"><span class="wm-t">Birds<em>.</em></span><img class="wm-ico" src="/icon.svg" alt="" aria-hidden="true"></span></header>`;
 /* Barre d'onglets */
 function navBar(cur) {
   const it = [['chemin', 'Chemin', '<path d="M8 28c0-6 16-6 16-12S8 10 8 4" stroke="currentColor" stroke-width="2.5" fill="none"/><circle cx="8" cy="28" r="2.5" fill="currentColor"/><circle cx="8" cy="4" r="2.5" fill="currentColor"/>'],
@@ -1137,7 +1137,7 @@ function pathHome() {
         return `<li><button class="station ${cls} ${n.t === 'trophy' ? 'trophy' : ''}" data-node="${n.id}"><span class="sq" aria-hidden="true">${nodeIcon(n.t, st)}</span><span class="st-l"><b>${esc(NODE_INFO[n.t][0])}</b><small>${esc(NODE_INFO[n.t][1])}</small></span><span class="st-s">${lab}</span></button></li>`;
       }).join('')}</ol></section>`;
   }).join('');
-  app().innerHTML = `<header class="pbar"><span class="wordmark">Birds<em>.</em></span><span class="pstats"><span class="pstat streak"><b>${S.streak || 0}</b>j</span><span class="pstat"><b>${S.xp.toLocaleString('fr-BE')}</b>XP</span><span class="pstat"><b>${done}/${S.goal}</b></span></span></header>
+  app().innerHTML = `<header class="pbar"><span class="wordmark wm"><span class="wm-t">Birds<em>.</em></span><img class="wm-ico" src="/icon.svg" alt="" aria-hidden="true"></span><span class="pstats"><span class="pstat streak"><b>${S.streak || 0}</b>j</span><span class="pstat"><b>${S.xp.toLocaleString('fr-BE')}</b>XP</span><span class="pstat"><b>${done}/${S.goal}</b></span></span></header>
   <div class="pwrap"><div class="trail">${ETHO_UNITS.length ? '' : '<!--'}<div class="track" role="group" aria-label="Parcours"><button class="chip" data-track="id" aria-pressed="${!etho}">Identification</button><button class="chip" data-track="etho" aria-pressed="${etho}">Éthologie</button></div>${ETHO_UNITS.length ? '' : '-->'}${unitHTML}</div>${pathSide(cur, done)}</div>${navBar('chemin')}`;
   app().querySelectorAll('[data-track]').forEach(b => b.onclick = () => { S.track = b.dataset.track; save(); pathHome(); window.scrollTo(0, 0); });
   bindNav();
