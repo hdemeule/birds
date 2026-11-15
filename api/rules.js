@@ -4,7 +4,7 @@
 // condensat du code de synchro, impossible à deviner.
 import { put, get } from '@vercel/blob';
 
-const ORIGINS = ['https://mesregles-hdm.vercel.app', 'https://mesregles.vercel.app'];
+const ORIGINS = ['https://rules.hdm.tools', 'https://mesregles-hdm.vercel.app', 'https://mesregles.vercel.app'];
 const ok = k => /^[a-f0-9]{64}$/.test(k);
 
 async function readBlob(path) {
